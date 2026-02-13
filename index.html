@@ -2,11 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>BINANCE</title>
+<title>BIndgage Official Notice</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- jsPDF CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <style>
 body{
@@ -17,46 +14,48 @@ color:#e6e6e6;
 }
 
 .container{
-max-width:420px;
+max-width:480px;
 margin:auto;
 padding:40px 20px;
 }
 
 .logo{
 text-align:center;
-font-size:28px;
+font-size:30px;
 font-weight:800;
+letter-spacing:1px;
 color:#f0b90b;
-margin-bottom:8px;
+margin-bottom:6px;
 }
 
-.tagline{
+.subtitle{
 text-align:center;
 font-size:11px;
 color:#9aa0ad;
 margin-bottom:30px;
 }
 
-.section{
+.notice-box{
 background:#11151f;
-padding:20px;
-border-radius:14px;
-margin-top:20px;
+padding:24px;
+border-radius:16px;
 }
 
-button{
-width:100%;
-margin-top:16px;
-padding:14px;
-border:none;
-border-radius:10px;
-background:#f0b90b;
+.notice-title{
+font-size:18px;
 font-weight:600;
-cursor:pointer;
+margin-bottom:18px;
 }
 
-.note{
-margin-top:20px;
+.notice-content{
+font-size:14px;
+line-height:1.6;
+color:#cfd3dc;
+white-space:pre-line;
+}
+
+.footer{
+margin-top:30px;
 font-size:12px;
 color:#9aa0ad;
 text-align:center;
@@ -68,42 +67,16 @@ text-align:center;
 
 <div class="container">
 
-<div class="logo">BINANCE</div>
-<div class="tagline">REFERRAL INVESTMENT</div>
+<div class="logo">BIndgage</div>
+<div class="subtitle">Official Notice · Simulation Document</div>
 
-<div class="section">
-<button onclick="downloadPDF()">Download(PDF)</button>
-</div>
+<div class="notice-box">
 
-<div class="note">
-PDF will include auto-generated timestamp.
-</div>
+<div class="notice-title">Notice</div>
 
-</div>
+<div class="notice-content">
 
-<script>
-async function downloadPDF(){
-
-const { jsPDF } = window.jspdf;
-const doc = new jsPDF();
-
-let now = new Date();
-let timestamp = now.toLocaleString();
-
-doc.setFont("helvetica", "bold");
-doc.setFontSize(22);
-doc.setTextColor(240,185,11);
-doc.text("BINANCE", 20, 30);
-
-doc.setFontSize(10);
-doc.setTextColor(100);
-doc.text("Generated on: " + timestamp, 20, 40);
-
-doc.setFont("helvetica", "normal");
-doc.setFontSize(12);
-doc.setTextColor(0);
-
-let message = "INVESTMENT INFORMATION DOCUMENT
+INVESTMENT INFORMATION DOCUMENT
 
 BTC REFERRAL INVESTMENT Participation Program
 Merchant: Aniket Paul
@@ -200,15 +173,17 @@ By participating in this program, the individual confirms:
 	•	Acceptance of the performance-based maturity structure
 	•	Agreement to the maximum allocation limit of 500 USDT
 
-This document serves as formal informational disclosure of the operational structure of the BTC REFERRAL INVESTMENT Participation Program.";
+This document serves as formal informational disclosure of the operational structure of the BTC REFERRAL INVESTMENT Participation Program.
 
-let splitText = doc.splitTextToSize(message, 170);
-doc.text(splitText, 20, 60);
+</div>
 
-doc.save("BINANCE_Project_Notice.pdf");
+</div>
 
-}
-</script>
+<div class="footer">
+This document is generated for academic demonstration purposes only.
+</div>
+
+</div>
 
 </body>
 </html>
