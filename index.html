@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BINANCE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- jsPDF CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+body{
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+background:#0b0f17;
+color:#e6e6e6;
+}
+
+.container{
+max-width:420px;
+margin:auto;
+padding:40px 20px;
+}
+
+.logo{
+text-align:center;
+font-size:28px;
+font-weight:800;
+color:#f0b90b;
+margin-bottom:8px;
+}
+
+.tagline{
+text-align:center;
+font-size:11px;
+color:#9aa0ad;
+margin-bottom:30px;
+}
+
+.section{
+background:#11151f;
+padding:20px;
+border-radius:14px;
+margin-top:20px;
+}
+
+button{
+width:100%;
+margin-top:16px;
+padding:14px;
+border:none;
+border-radius:10px;
+background:#f0b90b;
+font-weight:600;
+cursor:pointer;
+}
+
+.note{
+margin-top:20px;
+font-size:12px;
+color:#9aa0ad;
+text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">BINANCE</div>
+<div class="tagline">REFERRAL INVESTMENT</div>
+
+<div class="section">
+<button onclick="downloadPDF()">Download(PDF)</button>
+</div>
+
+<div class="note">
+PDF will include auto-generated timestamp.
+</div>
+
+</div>
+
+<script>
+async function downloadPDF(){
+
+const { jsPDF } = window.jspdf;
+const doc = new jsPDF();
+
+let now = new Date();
+let timestamp = now.toLocaleString();
+
+doc.setFont("helvetica", "bold");
+doc.setFontSize(22);
+doc.setTextColor(240,185,11);
+doc.text("BINANCE", 20, 30);
+
+doc.setFontSize(10);
+doc.setTextColor(100);
+doc.text("Generated on: " + timestamp, 20, 40);
+
+doc.setFont("helvetica", "normal");
+doc.setFontSize(12);
+doc.setTextColor(0);
+
+let message = "INVESTMENT INFORMATION DOCUMENT
+
+BTC REFERRAL INVESTMENT Participation Program
+Merchant: Aniket Paul
+Effective Date: 28 August 2025
+
+
+
+1. Program Overview
+
+This document provides detailed information regarding participation in a BTC-focused REFERRAL INVESTMENT digital asset strategy facilitated through Binance.
+
+The purpose of this program is to provide structured participation in Bitcoin (BTC)–based yield opportunities available within the Binance ecosystem. Allocations are deployed into BTC-oriented instruments and structured yield opportunities as available during the active investment cycle.
+
+At the present stage, the primary focus of allocation is:
+	•	Bitcoin (BTC)
+	•	BTC-related yield mechanisms within Binance
+
+No alternative asset exposure is planned unless formally communicated.
+
+
+2. Role of the Facilitator
+
+Aniket Paul acts as a Merchant and Facilitator coordinating participation into Binance-based REFERRAL INVESTMENT digital asset opportunities.
+
+The Facilitator:
+	•	Assists in structuring the allocation cycle
+	•	Oversees deployment timing
+	•	Does not coordinates settlement upon maturity
+	•	Provides cycle updates where applicable
+
+All allocations are executed within the Binance trading and investment infrastructure.
+
+
+3. Investment Allocation Limits
+
+To maintain structured allocation and liquidity discipline:
+	•	Maximum allocation per individual: 500 USDT
+	•	No allocation exceeding this threshold will be accepted under this program.
+
+This cap ensures balanced exposure and controlled capital flow within each cycle.
+
+
+4. Investment Cycle & Duration
+
+The program operates on a performance-cycle model.
+	•	The active trading duration is structured around a 21-day performance cycle.
+	•	The maturity date is not finalised.
+	•	Settlement timing remains flexible until performance targets are achieved within the structured cycle.
+
+Because REFERRAL INVESTMENT digital asset strategies are market-dependent, the exact settlement date is determined based on performance completion rather than a rigid calendar deadline.
+
+The cycle formally begins on 28 August 2025.
+
+
+
+5. Performance Framework
+
+The program is structured with defined performance brackets:
+	•	Minimum expected multiplier: 2.44x of allocated capital
+	•	Maximum expected multiplier: 2.45x of allocated capital
+
+Performance realization depends on BTC yield execution during the active cycle.
+
+Settlement is processed once the applicable multiplier target within this framework has been achieved and finalized for the cycle.
+
+
+6. Settlement & Distribution
+
+Upon completion of the investment cycle:
+	•	Allocated capital and applicable performance multiplier are calculated.
+	•	Distribution is executed in USDT.
+	•	Settlement timing is coordinated after maturity confirmation.
+
+All payouts are processed following internal reconciliation and confirmation of cycle completion.
+
+
+7. Market Conditions & Execution Environment
+
+This program operates within the Binance digital asset ecosystem, utilizing BTC-based REFERRAL INVESTMENT opportunities available during the allocation period.
+
+Execution depends on:
+	•	Market liquidity
+	•	BTC volatility structure
+	•	Availability of yield instruments within Binance at the time of deployment
+
+Allocation remains dynamic within BTC-focused instruments throughout the active cycle.
+
+
+8. Participation Confirmation
+
+By participating in this program, the individual confirms:
+	•	Voluntary allocation of capital
+	•	Understanding of the structured cycle format
+	•	Acceptance of the performance-based maturity structure
+	•	Agreement to the maximum allocation limit of 500 USDT
+
+This document serves as formal informational disclosure of the operational structure of the BTC REFERRAL INVESTMENT Participation Program.";
+
+let splitText = doc.splitTextToSize(message, 170);
+doc.text(splitText, 20, 60);
+
+doc.save("BINANCE_Project_Notice.pdf");
+
+}
+</script>
+
+</body>
+</html>
